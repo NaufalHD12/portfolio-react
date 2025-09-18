@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { FaBars, FaTimes } from "react-icons/fa";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 const navLinks = ["About", "Projects", "Experience", "Certifications", "Contact"];
@@ -36,7 +37,7 @@ const Header = () => {
                 <motion.a
                     whileHover={{ scale: 1.05 }}
                     className="text-2xl font-bold hero-text cursor-pointer"
-                    onClick={() => scrollToSection('#hero')}
+                    onClick={() => scrollToSection('hero')}
                 >
                     Naufal HD.
                 </motion.a>
