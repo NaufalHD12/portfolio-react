@@ -106,7 +106,7 @@ export const TIMELINE = [
         title: "Software Engineer Intern | WFO",
         subtitle: "PT Kilang Pertamina Internasional",
         date: "February 2025 – May 2025",
-        description: "Developed an AI-powered data entry automation system (RAG) and a full-stack equipment registration app using ASP.NET Core MVC."
+        description: "Developed an AI-powered data entry automation system (RAG) using Python and a full-stack equipment registration app using ASP.NET Core MVC."
     },
     {
         title: "Data Scientist Intern | Remote",

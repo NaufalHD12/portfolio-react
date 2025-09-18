@@ -35,7 +35,7 @@ const Hero = () => {
                 </p>
                 <div className="h-8 md:h-10 mb-8 flex justify-center">
                     <p className="text-lg md:text-xl text-primary typing-animation">
-                        Crafting Intelligent Digital Experiences.
+                        Building the future with cutting-edge technology.
                     </p>
                 </div>
                 <div className="flex justify-center items-center gap-4">
