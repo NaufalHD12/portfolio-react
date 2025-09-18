@@ -99,7 +99,7 @@ export const TIMELINE = [
     {
         title: "Machine Learning Cohort",
         subtitle: "Bangkit Academy 2024",
-        date: "September 2024 - January 2024",
+        date: "September 2024 - January 2025",
         description: "Completed an intensive program led by Google, GoTo & Traveloka, focusing on ML concepts, TensorFlow, and a final capstone project."
     },
     {
