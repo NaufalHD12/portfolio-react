@@ -1,3 +1,5 @@
+// src/components/TimelineItem.jsx
+
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
@@ -11,16 +13,20 @@ const TimelineItem = ({ item, isLeft }) => {
 
     return (
         <div
-            className={`flex justify-between items-center w-full ${
-                isLeft ? "flex-row-reverse" : ""
+            className={`mb-8 flex justify-start md:justify-between items-center w-full ${
+                isLeft ? "md:flex-row-reverse" : ""
             }`}
         >
-            <div className="order-1 w-5/12"></div>
-            <div className="z-20 flex items-center order-1 bg-primary shadow-xl w-8 h-8 rounded-full">
+            <div className="order-1 w-5/12 hidden md:block"></div>
+
+            {/* Pindahkan circle ke kiri pada mobile */}
+            <div className="z-20 flex items-center order-1 bg-primary shadow-xl w-8 h-8 rounded-full transform md:transform-none -translate-x-1/2 md:translate-x-0">
                 <h1 className="mx-auto font-semibold text-lg text-primary-foreground"></h1>
             </div>
+
+            {/* Card: Lebar penuh di mobile, 5/12 di desktop. Tambahkan margin kiri di mobile */}
             <motion.div
-                className="order-1 glass-card rounded-lg w-5/12 px-6 py-4 cursor-pointer"
+                className="order-1 glass-card rounded-lg w-full md:w-5/12 px-6 py-4 cursor-pointer ml-4 md:ml-0"
                 variants={itemVariants}
                 initial="hidden"
                 whileInView="visible"
