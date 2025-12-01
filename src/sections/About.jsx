@@ -28,8 +28,8 @@ const About = () => {
     const features = [
         {
             icon: Code,
-            title: "Software Development",
-            description: "Passionate about creating efficient, scalable solutions using modern technologies and best practices.",
+            title: "Backend Engineering",
+            description: "Passionate about building scalable, efficient backend systems using modern technologies and best practices.",
         },
         {
             icon: Brain,
@@ -38,8 +38,8 @@ const About = () => {
         },
         {
             icon: Rocket,
-            title: "Innovation Focus",
-            description: "Always eager to learn new technologies and implement cutting-edge solutions.",
+            title: "Design Systems & Architecture",
+            description: "Designing robust system architectures and implementing design systems for maintainable, scalable solutions.",
         },
         {
             icon: Target,
@@ -61,21 +61,20 @@ const About = () => {
                     {/* Left Column: Text Description */}
                     <motion.div variants={itemVariants} className="space-y-6">
                         <h3 className="text-2xl font-semibold text-primary mb-4">
-                            Crafting Intelligent Digital Experiences
+                            Backend Engineer | ML & AI Engineer | System Architect
                         </h3>
 
                         <p className="text-lg text-muted-foreground leading-relaxed">
-                            I'm a passionate software and AI engineer dedicated to building
-                            innovative solutions that bridge the gap between complex
-                            technology and user-friendly experiences. My journey is driven by
-                            a commitment to excellence and continuous learning.
+                            I'm a dedicated backend engineer and AI specialist focused on
+                            designing robust system architectures and scalable solutions. My
+                            expertise spans machine learning engineering, API development, and
+                            implementing design systems that enhance user experiences.
                         </p>
 
                         <p className="text-lg text-muted-foreground leading-relaxed">
-                            Currently focusing on building scalable applications and
-                            implementing machine learning algorithms, I thrive on exploring
-                            the intersection of technology and human creativity to make a
-                            positive impact.
+                            Currently specializing in backend technologies, AI-driven applications,
+                            and system architecture, I excel at creating efficient, maintainable
+                            code and innovative solutions that solve real-world challenges.
                         </p>
 
                         <motion.div

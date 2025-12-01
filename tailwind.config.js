@@ -52,16 +52,18 @@ export default {
                     DEFAULT: "hsl(var(--card))",
                     foreground: "hsl(var(--card-foreground))",
                 },
-                // Persona 3 Custom Colors
-                neon: {
-                    blue: "hsl(var(--neon-blue))",
-                    teal: "hsl(var(--neon-teal))",
+                // Mint Theme Custom Colors
+                mint: {
+                    primary: "hsl(var(--mint-primary))",
+                    light: "hsl(var(--mint-light))",
+                    dark: "hsl(var(--mint-dark))",
                 },
                 dark: {
                     navy: "hsl(var(--dark-navy))",
                 },
                 glass: {
-                    blue: "hsl(var(--glass-blue) / 0.1)",
+                    mint: "hsl(var(--glass-mint) / 0.1)",
+                    teal: "hsl(var(--accent-teal) / 0.1)",
                 },
             },
             backgroundImage: {
@@ -69,12 +71,15 @@ export default {
                 "gradient-dark": "var(--gradient-dark)",
                 "gradient-card": "var(--gradient-card)",
                 "gradient-hero": "var(--gradient-hero)",
+                "gradient-glass": "var(--gradient-glass)",
             },
             boxShadow: {
                 neon: "var(--shadow-neon)",
                 card: "var(--shadow-card)",
                 glow: "var(--glow-primary)",
                 "glow-intense": "var(--glow-intense)",
+                soft: "var(--shadow-soft)",
+                "glass-card": "0 20px 40px -20px hsl(160 84% 45% / 0.15), inset 0 1px 0 hsl(160 84% 45% / 0.1)",
             },
             fontFamily: {
                 sans: ["Inter", "system-ui", "sans-serif"],
@@ -98,11 +103,26 @@ export default {
                     "0%": { opacity: "0", transform: "translateY(20px)" },
                     "100%": { opacity: "1", transform: "translateY(0)" },
                 },
+                "float": {
+                    "0%, 100%": { transform: "translateY(0)" },
+                    "50%": { transform: "translateY(-10px)" },
+                },
+                "pulse-glow": {
+                    "0%, 100%": { boxShadow: "var(--glow-primary)" },
+                    "50%": { boxShadow: "var(--glow-intense)" },
+                },
+                "slide-in": {
+                    "0%": { transform: "translateX(-20px)", opacity: "0" },
+                    "100%": { transform: "translateX(0)", opacity: "1" },
+                },
             },
             animation: {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
                 "fade-in": "fade-in 0.6s ease-out",
+                "float": "float 3s ease-in-out infinite",
+                "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+                "slide-in": "slide-in 0.5s ease-out",
             },
         },
         plugins: [tailwindcssAnimate],

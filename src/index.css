@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Persona 3 Reload Inspired Design System - Dark theme with neon blue accents */
+/* Modern Glassmorphism Design System - Mint Theme */
 
 @layer base {
   :root {
-    /* Persona 3 Reload Color Palette */
+    /* Mint Theme Color Palette */
     --background: 220 25% 5%;
     --foreground: 200 30% 95%;
 
@@ -16,7 +16,7 @@
     --popover: 220 25% 8%;
     --popover-foreground: 200 30% 95%;
 
-    --primary: 195 100% 50%;
+    --primary: 160 84% 45%;
     --primary-foreground: 220 25% 5%;
 
     --secondary: 220 25% 12%;
@@ -25,7 +25,7 @@
     --muted: 220 25% 10%;
     --muted-foreground: 200 15% 65%;
 
-    --accent: 195 100% 60%;
+    --accent: 160 84% 55%;
     --accent-foreground: 220 25% 5%;
 
     --destructive: 0 84% 60%;
@@ -33,36 +33,40 @@
 
     --border: 220 25% 15%;
     --input: 220 25% 12%;
-    --ring: 195 100% 50%;
+    --ring: 160 84% 45%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Persona 3 Custom Colors */
-    --neon-blue: 195 100% 50%;
-    --neon-teal: 180 100% 50%;
+    /* Mint Theme Custom Colors */
+    --mint-primary: 160 84% 45%;
+    --mint-light: 160 84% 65%;
+    --mint-dark: 160 84% 25%;
     --dark-navy: 220 30% 3%;
-    --glass-blue: 195 100% 50%;
-    --accent-purple: 260 100% 70%;
+    --glass-mint: 160 84% 45%;
+    --accent-teal: 180 84% 45%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(195 100% 50%), hsl(180 100% 50%));
+    --gradient-primary: linear-gradient(135deg, hsl(160 84% 45%), hsl(180 84% 45%));
     --gradient-dark: linear-gradient(135deg, hsl(220 30% 3%), hsl(220 25% 8%));
-    --gradient-card: linear-gradient(135deg, hsl(220 25% 8% / 0.8), hsl(220 25% 12% / 0.8));
-    --gradient-hero: linear-gradient(135deg, hsl(220 30% 3%), hsl(195 100% 15%));
+    --gradient-card: linear-gradient(135deg, hsl(220 25% 8% / 0.7), hsl(220 25% 12% / 0.7));
+    --gradient-hero: linear-gradient(135deg, hsl(220 30% 3%), hsl(160 84% 15%));
+    --gradient-glass: linear-gradient(135deg, hsl(220 25% 10% / 0.2), hsl(220 25% 8% / 0.1));
 
     /* Glows and shadows */
-    --glow-primary: 0 0 30px hsl(195 100% 50% / 0.3);
-    --glow-intense: 0 0 50px hsl(195 100% 50% / 0.5);
-    --shadow-card: 0 10px 30px -10px hsl(195 100% 50% / 0.1);
-    --shadow-neon: 0 0 20px hsl(195 100% 50% / 0.4);
+    --glow-primary: 0 0 30px hsl(160 84% 45% / 0.3);
+    --glow-intense: 0 0 50px hsl(160 84% 45% / 0.5);
+    --shadow-card: 0 20px 40px -20px hsl(160 84% 45% / 0.15);
+    --shadow-neon: 0 0 25px hsl(160 84% 45% / 0.4);
+    --shadow-soft: 0 8px 32px hsl(160 84% 45% / 0.08);
 
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-glow: box-shadow 0.3s ease-in-out;
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .light {
-    /* Light theme with Persona 3 aesthetics */
+    /* Light theme with Mint aesthetics */
     --background: 200 30% 98%;
     --foreground: 220 30% 8%;
 
@@ -72,7 +76,7 @@
     --popover: 200 30% 100%;
     --popover-foreground: 220 30% 8%;
 
-    --primary: 195 100% 45%;
+    --primary: 160 84% 40%;
     --primary-foreground: 200 30% 98%;
 
     --secondary: 200 20% 92%;
@@ -81,7 +85,7 @@
     --muted: 200 15% 88%;
     --muted-foreground: 220 15% 40%;
 
-    --accent: 180 100% 50%;
+    --accent: 160 84% 50%;
     --accent-foreground: 200 30% 98%;
 
     --destructive: 0 84% 50%;
@@ -89,26 +93,29 @@
 
     --border: 200 15% 82%;
     --input: 200 15% 88%;
-    --ring: 195 100% 45%;
+    --ring: 160 84% 40%;
 
     /* Light theme custom colors */
-    --neon-blue: 195 100% 45%;
-    --neon-teal: 180 100% 45%;
+    --mint-primary: 160 84% 40%;
+    --mint-light: 160 84% 60%;
+    --mint-dark: 160 84% 20%;
     --dark-navy: 220 30% 8%;
-    --glass-blue: 195 100% 45%;
-    --accent-purple: 260 80% 55%;
+    --glass-mint: 160 84% 40%;
+    --accent-teal: 180 84% 40%;
 
     /* Light theme gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(195 100% 45%), hsl(180 100% 45%));
+    --gradient-primary: linear-gradient(135deg, hsl(160 84% 40%), hsl(180 84% 40%));
     --gradient-dark: linear-gradient(135deg, hsl(200 30% 98%), hsl(200 20% 92%));
     --gradient-card: linear-gradient(135deg, hsl(200 30% 100% / 0.9), hsl(200 20% 95% / 0.9));
-    --gradient-hero: linear-gradient(135deg, hsl(200 30% 98%), hsl(195 50% 90%));
+    --gradient-hero: linear-gradient(135deg, hsl(200 30% 98%), hsl(160 50% 90%));
+    --gradient-glass: linear-gradient(135deg, hsl(200 30% 100% / 0.3), hsl(200 20% 95% / 0.2));
 
     /* Light theme glows and shadows */
-    --glow-primary: 0 0 25px hsl(195 100% 45% / 0.25);
-    --glow-intense: 0 0 40px hsl(195 100% 45% / 0.4);
-    --shadow-card: 0 8px 25px -8px hsl(195 100% 45% / 0.08);
-    --shadow-neon: 0 0 15px hsl(195 100% 45% / 0.3);
+    --glow-primary: 0 0 25px hsl(160 84% 40% / 0.25);
+    --glow-intense: 0 0 40px hsl(160 84% 40% / 0.4);
+    --shadow-card: 0 12px 30px -10px hsl(160 84% 40% / 0.1);
+    --shadow-neon: 0 0 20px hsl(160 84% 40% / 0.3);
+    --shadow-soft: 0 6px 24px hsl(160 84% 40% / 0.06);
   }
 }
 
@@ -140,17 +147,45 @@
     box-shadow: var(--glow-intense);
   }
 
-  /* Glass morphism effect */
+  /* Enhanced Glass morphism effects */
   .glass-card {
     background: var(--gradient-card);
-    backdrop-filter: blur(20px);
-    border: 1px solid hsl(var(--border) / 0.2);
-    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.15);
+    box-shadow: var(--shadow-card), inset 0 1px 0 hsl(var(--mint-primary) / 0.1);
+    transition: var(--transition-smooth);
+  }
+
+  .glass-card:hover {
+    backdrop-filter: blur(28px) saturate(200%);
+    box-shadow: var(--shadow-card), var(--glow-primary), inset 0 1px 0 hsl(var(--mint-primary) / 0.2);
+    transform: translateY(-4px);
+  }
+
+  .glass-nav {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.1);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .glass-icon {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.1);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+  }
+
+  .glass-icon:hover {
+    backdrop-filter: blur(16px) saturate(200%);
+    box-shadow: var(--shadow-soft), var(--glow-primary);
+    transform: scale(1.1) translateY(-2px);
   }
 
   /* Hero text with glow */
   .hero-text {
-    text-shadow: 0 0 20px hsl(var(--neon-blue) / 0.5);
+    text-shadow: 0 0 20px hsl(var(--mint-primary) / 0.5);
   }
 
   /* Typing animation */
@@ -158,7 +193,7 @@
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 3px solid hsl(var(--neon-blue));
+    border-right: 3px solid hsl(var(--mint-primary));
     max-width: 0;
     animation:
       typing var(--typing-duration, 3.5s) steps(var(--char-count, 40), end) forwards,
@@ -172,7 +207,7 @@
 
   @keyframes blink-caret {
     from, to { border-color: transparent; }
-    50% { border-color: hsl(var(--neon-blue)); }
+    50% { border-color: hsl(var(--mint-primary)); }
   }
 
   /* Particle background */
@@ -201,7 +236,7 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, hsl(var(--neon-teal)), hsl(var(--neon-blue)));
+    background: linear-gradient(to bottom, hsl(var(--accent-teal)), hsl(var(--mint-primary)));
   }
 
   /* Light theme specific styles */
@@ -210,14 +245,40 @@
   }
 
   .light .hero-text {
-    text-shadow: 0 0 15px hsl(var(--neon-blue) / 0.3);
+    text-shadow: 0 0 15px hsl(var(--mint-primary) / 0.3);
   }
 
   .light .glass-card {
     background: var(--gradient-card);
-    backdrop-filter: blur(15px);
-    border: 1px solid hsl(var(--border) / 0.3);
-    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.25);
+    box-shadow: var(--shadow-card), inset 0 1px 0 hsl(var(--mint-primary) / 0.08);
+  }
+
+  .light .glass-card:hover {
+    backdrop-filter: blur(24px) saturate(200%);
+    box-shadow: var(--shadow-card), var(--glow-primary), inset 0 1px 0 hsl(var(--mint-primary) / 0.15);
+    border-color: hsl(var(--mint-primary) / 0.3);
+  }
+
+  .light .glass-nav {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.2);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .light .glass-icon {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(10px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.2);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .light .glass-icon:hover {
+    backdrop-filter: blur(14px) saturate(200%);
+    box-shadow: var(--shadow-soft), var(--glow-primary);
+    border-color: hsl(var(--mint-primary) / 0.3);
   }
 
   .light .neon-glow {
@@ -228,17 +289,32 @@
     box-shadow: var(--glow-intense);
   }
 
+  /* Light theme button enhancements */
+  .light .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .light .text-primary {
+    color: hsl(var(--primary));
+  }
+
+  .light .border-primary {
+    border-color: hsl(var(--primary));
+  }
+
+  .light .bg-primary {
+    background-color: hsl(var(--primary));
+  }
+
   .section-title {
-    @apply relative mb-12 pb-5;
+    @apply relative mb-16 pb-6;
   }
 
   .section-title::after {
     content: '';
-    @apply absolute bottom-0 left-1/2 h-[3px] w-28 -translate-x-1/2 rounded-full;
+    @apply absolute bottom-0 left-1/2 h-[4px] w-32 -translate-x-1/2 rounded-full;
     background: var(--gradient-primary);
-  }
-
-  .section-title:hover::before {
-      @apply rotate-90;
+    box-shadow: var(--glow-primary);
+    transition: var(--transition-smooth);
   }
 }

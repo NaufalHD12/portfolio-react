@@ -9,21 +9,25 @@ const Button = ({
     variant = "primary",
 }) => {
     const baseStyles =
-    "px-6 py-3 font-semibold rounded-md transition-all flex items-center justify-center gap-2 neon-glow";
+    "px-8 py-4 font-semibold rounded-xl transition-all flex items-center justify-center gap-3 backdrop-blur-sm";
 
     const variantStyles = {
-        primary: "bg-gradient-primary text-primary-foreground hover:opacity-90",
-        outline: "bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground",
+        primary: "bg-gradient-primary text-primary-foreground hover:shadow-glow-intense hover:scale-105 glass-card",
+        outline: "bg-gradient-glass border border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 hover:shadow-glow",
+        glass: "bg-gradient-glass border border-white/10 text-foreground hover:bg-white/5 hover:shadow-soft",
     };
 
     return (
         <motion.button
             onClick={onClick}
-            className={`${baseStyles} ${variantStyles[variant]} ${className}`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className={`${baseStyles} ${variantStyles[variant]} ${className} animate-pulse-glow`}
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
         >
-            {Icon && <Icon className="w-5 h-5" />}
+            {Icon && <Icon className="w-6 h-6" />}
             {children}
         </motion.button>
     );
