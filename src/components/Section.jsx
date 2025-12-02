@@ -4,7 +4,7 @@ const Section = ({ id, title, children, className = "" }) => {
     return (
         <Motion.section
             id={id}
-            className={`py-24 lg:py-32 relative overflow-hidden scroll-mt-20 ${className}`}
+            className={`py-24 lg:py-32 relative overflow-hidden scroll-mt-16 ${className}`}
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
