@@ -29,6 +29,7 @@ const Section = ({ id, title, children, className = "" }) => {
                         <p className="text-center text-muted-foreground mt-4 text-lg max-w-2xl mx-auto">
                             {id === "about" && "Get to know more about me, my background, and what drives me."}
                             {id === "projects" && "Explore my latest projects and technical implementations."}
+                            {id === "skills" && "My technical skills and proficiencies across various technologies."}
                             {id === "experience" && "My professional journey and career milestones."}
                             {id === "certifications" && "Credentials and certifications I've earned."}
                             {id === "contact" && "Let's connect and discuss potential opportunities."}
