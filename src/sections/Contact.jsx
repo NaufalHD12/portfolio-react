@@ -1,108 +1,72 @@
-import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
-import ReCAPTCHA from "react-google-recaptcha";
 import Section from "../components/Section";
-import Button from "../components/Button";
-import { FaPaperPlane } from "react-icons/fa";
+import { motion as Motion } from "framer-motion";
 import { SOCIALS } from "../constants";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 const Contact = () => {
-    const form = useRef();
-    const recaptchaRef = useRef();
-    const [status, setStatus] = useState("");
-
-    const sendEmail = (e) => {
-        e.preventDefault();
-        setStatus("Sending...");
-
-        const recaptchaValue = recaptchaRef.current.getValue();
-        if (!recaptchaValue) {
-            setStatus("Please verify you are not a robot.");
-            return;
+    const contacts = [
+        {
+            name: "Email",
+            icon: FaEnvelope,
+            url: "mailto:hadinaufal06@gmail.com",
+            color: "text-foreground hover:text-primary/80",
+            label: "Send email to hadinaufal06@gmail.com"
+        },
+        {
+            name: "GitHub",
+            icon: FaGithub,
+            url: SOCIALS.github,
+            color: "text-foreground hover:text-gray-300",
+            label: "Visit GitHub profile"
+        },
+        {
+            name: "LinkedIn",
+            icon: FaLinkedin,
+            url: SOCIALS.linkedin,
+            color: "text-foreground hover:text-blue-400",
+            label: "Visit LinkedIn profile"
+        },
+        {
+            name: "Instagram",
+            icon: FaInstagram,
+            url: SOCIALS.instagram,
+            color: "text-foreground hover:text-pink-400",
+            label: "Visit Instagram profile"
         }
-
-        emailjs
-            .sendForm(
-                "service_zpp87fq",
-                "template_knou057",
-                form.current,
-                "sD5KmuirNJQ13_KoH" 
-            )
-            .then(
-                (result) => {
-                    console.log("SUCCESS!", result.text);
-                    setStatus("Message sent successfully!");
-                    form.current.reset();
-                    recaptchaRef.current.reset(); // Reset ReCAPTCHA setelah berhasil
-                },
-                (error) => {
-                    console.log("FAILED...", error.text);
-                    setStatus(`Failed: ${error.text}`);
-                }
-            );
-    };
+    ];
 
     return (
-        <Section id="contact" title="Get In Touch">
-            <div className="max-w-2xl mx-auto text-center">
-                <p className="text-muted-foreground mb-8">
-                    Have a question or want to work together? Feel free to reach out.
-                </p>
-
-                <form
-                    ref={form}
-                    onSubmit={sendEmail}
-                    className="flex flex-col gap-4 mb-8"
+        <Section id="contact" title="Contact">
+            <div className="max-w-xl mx-auto">
+                <Motion.div
+                    className="glass-card p-8 md:p-10 rounded-3xl border border-white/10"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    whileHover={{ scale: 1.02 }}
                 >
-                    <input
-                        type="text"
-                        name="user_name"
-                        placeholder="Your Name"
-                        required
-                        className="bg-input p-3 rounded-md border-2 border-transparent focus:border-primary focus:ring-0 transition-colors"
-                    />
-                    <input
-                        type="email"
-                        name="user_email"
-                        placeholder="Your Email"
-                        required
-                        className="bg-input p-3 rounded-md border-2 border-transparent focus:border-primary focus:ring-0 transition-colors"
-                    />
-                    <textarea
-                        name="message"
-                        placeholder="Your Message"
-                        rows="5"
-                        required
-                        className="bg-input p-3 rounded-md border-2 border-transparent focus:border-primary focus:ring-0 transition-colors"
-                    ></textarea>
-
-                    <div className="flex justify-center my-4">
-                        <ReCAPTCHA
-                            ref={recaptchaRef}
-                            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-                            theme="dark"
-                        />
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        {contacts.map((contact) => (
+                            <Motion.a
+                                key={contact.name}
+                                href={contact.url}
+                                target={contact.name === "Email" ? "_self" : "_blank"}
+                                rel={contact.name === "Email" ? "" : "noopener noreferrer"}
+                                className="flex flex-col items-center p-4 rounded-2xl hover:bg-white/5 transition-all duration-300 group"
+                                whileHover={{ scale: 1.05, y: -3 }}
+                                whileTap={{ scale: 0.95 }}
+                                aria-label={contact.label}
+                            >
+                                <contact.icon 
+                                    className={`text-4xl md:text-5xl ${contact.color} transition-colors duration-300 mb-2`}
+                                />
+                                <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">
+                                    {contact.name}
+                                </span>
+                            </Motion.a>
+                        ))}
                     </div>
-
-                    <Button type="submit" icon={FaPaperPlane} className="w-full">
-                        Send Message
-                    </Button>
-                </form>
-
-                {status && <p className="text-center mb-8">{status}</p>}
-
-                <div className="flex justify-center gap-6">
-                    <a href={SOCIALS.github} target="_blank" rel="noopener noreferrer">
-                        <FaGithub size={28} />
-                    </a>
-                    <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer">
-                        <FaLinkedin size={28} />
-                    </a>
-                    <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer">
-                        <FaInstagram size={28} />
-                    </a>
-                </div>
+                </Motion.div>
             </div>
         </Section>
     );

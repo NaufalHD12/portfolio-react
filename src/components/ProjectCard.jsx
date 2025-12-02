@@ -1,9 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaGithub, FaExternalLinkAlt, FaEye } from "react-icons/fa";
 
 const ProjectCard = ({ project }) => {
-    const { title, description, tags, image, github, demo } = project;
+    const { title, summary, techStack, image, github, demo, slug } = project;
 
     return (
         <motion.div
@@ -22,14 +23,14 @@ const ProjectCard = ({ project }) => {
             </div>
             <div className="p-8 flex flex-col flex-grow">
                 <h3 className="text-2xl font-bold mb-4 text-primary">{title}</h3>
-                <p className="text-muted-foreground mb-6 flex-grow leading-relaxed">{description}</p>
+                <p className="text-muted-foreground mb-6 flex-grow leading-relaxed">{summary}</p>
                 <div className="flex flex-wrap gap-3 mb-6">
-                    {tags.map((tag) => (
+                    {techStack.map((tech) => (
                         <span
-                            key={tag}
+                            key={tech}
                             className="text-sm font-medium px-3 py-1.5 bg-secondary/50 backdrop-blur-sm rounded-full border border-white/10"
                         >
-                            {tag}
+                            {tech}
                         </span>
                     ))}
                 </div>
@@ -58,6 +59,16 @@ const ProjectCard = ({ project }) => {
                             <FaExternalLinkAlt size={24} />
                         </motion.a>
                     )}
+                    <Link to={`/projects/${slug}`}>
+                        <motion.div
+                            className="text-foreground hover:text-primary transition-colors glass-icon p-3 rounded-full cursor-pointer"
+                            aria-label={`${title} project details`}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            <FaEye size={24} />
+                        </motion.div>
+                    </Link>
                 </div>
             </div>
         </motion.div>

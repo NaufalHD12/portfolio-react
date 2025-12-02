@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 import { FaBars, FaTimes } from "react-icons/fa";
 // eslint-disable-next-line no-unused-vars
@@ -9,6 +10,8 @@ const navLinks = ["About", "Projects", "Skills", "Experience", "Certifications",
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -19,9 +22,21 @@ const Header = () => {
     }, []);
 
     const scrollToSection = (id) => {
-        document
-            .getElementById(id.toLowerCase())
-            ?.scrollIntoView({ behavior: "smooth" });
+        // If we're on a project detail page, navigate to home first
+        if (location.pathname.startsWith('/projects/')) {
+            navigate('/');
+            // Wait for navigation to complete, then scroll
+            setTimeout(() => {
+                document
+                    .getElementById(id.toLowerCase())
+                    ?.scrollIntoView({ behavior: "smooth" });
+            }, 100);
+        } else {
+            // Normal scroll behavior on home page
+            document
+                .getElementById(id.toLowerCase())
+                ?.scrollIntoView({ behavior: "smooth" });
+        }
         setIsMenuOpen(false);
     };
 

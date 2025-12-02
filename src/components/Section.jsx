@@ -1,11 +1,10 @@
-// eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 const Section = ({ id, title, children, className = "" }) => {
     return (
-        <motion.section
+        <Motion.section
             id={id}
-            className={`py-24 lg:py-32 relative overflow-hidden ${className}`}
+            className={`py-24 lg:py-32 relative overflow-hidden scroll-mt-20 ${className}`}
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
@@ -17,35 +16,35 @@ const Section = ({ id, title, children, className = "" }) => {
             
             <div className="container mx-auto px-6 relative z-10">
                 {title && (
-                    <motion.div
+                    <Motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="mb-20"
+                        className="mb-12"
                     >
                         <h2 className="section-title text-4xl md:text-5xl lg:text-6xl font-bold text-center hero-text">
                             {title}
                         </h2>
-                        <p className="text-center text-muted-foreground mt-6 text-lg max-w-2xl mx-auto">
+                        <p className="text-center text-muted-foreground mt-4 text-lg max-w-2xl mx-auto">
                             {id === "about" && "Get to know more about me, my background, and what drives me."}
                             {id === "projects" && "Explore my latest projects and technical implementations."}
                             {id === "experience" && "My professional journey and career milestones."}
                             {id === "certifications" && "Credentials and certifications I've earned."}
                             {id === "contact" && "Let's connect and discuss potential opportunities."}
                         </p>
-                    </motion.div>
+                    </Motion.div>
                 )}
-                <motion.div
+                <Motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                 >
                     {children}
-                </motion.div>
+                </Motion.div>
             </div>
-        </motion.section>
+        </Motion.section>
     );
 };
 

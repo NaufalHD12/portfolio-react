@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 const Button = ({
     children,
@@ -7,6 +6,8 @@ const Button = ({
     icon: Icon,
     className = "",
     variant = "primary",
+    "aria-label": ariaLabel,
+    ...props
 }) => {
     const baseStyles =
     "px-8 py-4 font-semibold rounded-xl transition-all flex items-center justify-center gap-3 backdrop-blur-sm";
@@ -18,7 +19,7 @@ const Button = ({
     };
 
     return (
-        <motion.button
+        <Motion.button
             onClick={onClick}
             className={`${baseStyles} ${variantStyles[variant]} ${className} animate-pulse-glow`}
             whileHover={{ scale: 1.05, y: -2 }}
@@ -26,10 +27,12 @@ const Button = ({
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
+            aria-label={ariaLabel}
+            {...props}
         >
             {Icon && <Icon className="w-6 h-6" />}
             {children}
-        </motion.button>
+        </Motion.button>
     );
 };
 

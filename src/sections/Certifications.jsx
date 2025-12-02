@@ -8,9 +8,12 @@ const Certifications = () => {
         <Section id="certifications" title="Certifications">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 {CERTIFICATIONS.map((cert, index) => (
-                    <motion.div
+                    <motion.a
                         key={index}
-                        className="glass-card p-6 text-center"
+                        href={cert.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="glass-card p-6 text-center block"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.5 }}
@@ -21,7 +24,7 @@ const Certifications = () => {
                         }}
                     >
                         <p className="font-semibold text-lg">{cert.name}</p>
-                    </motion.div>
+                    </motion.a>
                 ))}
             </div>
         </Section>
