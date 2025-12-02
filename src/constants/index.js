@@ -240,7 +240,7 @@ export const TIMELINE = [
         description: "Currently pursuing a Bachelor's degree with a current GPA of 3.81, focusing on Backend & AI Engineering."
     },
     {
-        title: "Machine Learning Cohort",
+        title: "Machine Learning",
         subtitle: "Bangkit Academy 2024",
         date: "September 2024 - January 2025",
         description: "Completed an intensive program led by Google, GoTo & Traveloka, focusing on ML concepts, TensorFlow, and a final capstone project."
@@ -258,7 +258,7 @@ export const TIMELINE = [
         description: "Developed credit scoring models achieving 96% accuracy and executed an end-to-end data science workflow, including EDA and feature engineering."
     },
     {
-        title: "React & Backend with AI Program",
+        title: "React & Backend with AI",
         subtitle: "Asah by Dicoding & Accenture",
         date: "August 2025 - Present",
         description: "Participating in an advanced program focused on full-stack development with React, backend technologies, and AI integration."
