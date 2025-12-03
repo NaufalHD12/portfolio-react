@@ -18,7 +18,7 @@
         font-family="monospace"
         font-size="42"
         font-weight="bold"
-        fill="#00BFFF"
+        fill="#00BF63"
         text-anchor="middle"
         filter="url(#glow)"
     >
