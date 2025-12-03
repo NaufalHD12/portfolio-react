@@ -3,4 +3,4 @@ Allow: /
 Disallow: /node_modules/
 Disallow: /src/
 
-Sitemap: https://naufalhd12.github.io/portfolio-react/sitemap.xml
+Sitemap: https://naufalhd.vercel.app/sitemap.xml
