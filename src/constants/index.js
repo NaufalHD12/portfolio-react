@@ -220,7 +220,6 @@ export const PROJECTS = [
         description: [
             "Developed a complete data analysis solution for bike sharing systems using Python and Streamlit for the dashboard interface.",
             "Implemented data preprocessing and cleaning pipelines to handle raw bike sharing data including weather conditions, seasonality, and usage patterns.",
-            "Built predictive models to forecast bike demand based on historical data, weather conditions, and temporal factors.",
             "Created interactive visualizations showing usage patterns, peak hours, popular stations, and seasonal trends.",
             "Deployed the dashboard on Streamlit Cloud for easy access and real-time data exploration.",
         ],
